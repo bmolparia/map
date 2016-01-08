@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Battle Map</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/map.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="text-center text-primary">
+                 A Map For all your Battles!
+			</h2><br/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+			<dl>
+				<dt>
+					Description lists
+				</dt>
+				<dd>
+					A description list is perfect for defining terms.
+				</dd>
+				<dt>
+					Euismod
+				</dt>
+				<dd>
+					Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+				</dd>
+				<dd>
+					Donec id elit non mi porta gravida at eget metus.
+				</dd>
+				<dt>
+					Malesuada porta
+				</dt>
+				<dd>
+					Etiam porta sem malesuada magna mollis euismod.
+				</dd>
+				<dt>
+					Felis euismod semper eget lacinia
+				</dt>
+				<dd>
+					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+				</dd>
+			</dl> 
+			<button type="button" class="btn btn-success" id="button_player" data-bind="click: addPlayer">
+				Add Palyer 
+			</button>&nbsp;&nbsp; 
+			<button type="button" class="btn btn-warning" id="button_monster" data-bind="click: addMonster">
+				Add Monster
+			</button><br/><br/>
+            <button type="button" class="btn btn-primary" id="button_wall" data-bind="click: addWall">
+    			Add Wall	
+			</button><br/><br/>
+            <button type="button" class="btn btn-danger" id="button_delete" data-bind="click: deleteObject">
+    			Delete	
+			</button>
+
+		</div>
+		<div class="col-md-10">
+            <canvas id='mapCanvas' width='1000' height='600'>
+            Please make sure your browser supports HTML5
+            </canvas>
+
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/fabric.js"></script>
+    <script src="js/knockout.js"></script>
+    <script src="js/map.js"></script>
+    
+    <img src="img/red-brick-wall.png" id='wall_img' style="display: none">
+
+  </body>
+</html>

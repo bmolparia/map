@@ -1,0 +1,8 @@
+.canvas-container {
+    margin: 0 auto;
+    }
+
+#mapCanvas{
+    border-style: solid;
+    border-color: #1e252b;
+}
