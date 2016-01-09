@@ -61,14 +61,35 @@
 			<button type="button" class="btn btn-warning" id="button_monster" data-bind="click: addMonster">
 				Add Monster
 			</button><br/><br/>
-            <button type="button" class="btn btn-primary" id="button_wall" data-bind="click: addWall">
+            
+            <button class="btn btn-primary">
+					Preset Images
+				</button> 
+				<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#" data-bind="click: function() (addImage('wall_img'))">Add Wall</a>
+					</li>
+                    <li>
+						<a href="#">Add Wall</a>
+					</li>
+                   	<li>
+						<a href="#">Add Wall</a>
+					</li>
+
+				</ul>
+
+
+            <!--<button type="button" class="btn btn-primary" id="button_wall" data-bind="click: addWall">
     			Add Wall	
-			</button><br/><br/>
+			</button> --> <br/><br/>
             <button type="button" class="btn btn-danger" id="button_delete" data-bind="click: deleteObject">
     			Delete	
 			</button>
 
-		</div>
+					</div>
 		<div class="col-md-10">
             <canvas id='mapCanvas' width='1000' height='600'>
             Please make sure your browser supports HTML5

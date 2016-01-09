@@ -51,12 +51,16 @@ function ObjectAdditions() {
        this.map.add(monster)
     }
 
-    this.addWall = function() {
-        var imgElement = document.getElementById('wall_img');
-        var wall = new fabric.Image(imgElement , {
-                left:100, right:100
+    this.addImage = function(img) {
+        var imgElement = document.getElementById(img);
+        //console.log(imgElement.width/mapWidth)
+        var dispImg = new fabric.Image(imgElement , {
+                left:100, top:100,
+                scaleX: 2*cellsize/imgElement.width, 
+                scaleY: cellsize/imgElement.height, 
+
         })
-        this.map.add(wall)
+        this.map.add(dispImg)
     }
     
     this.deleteObject = function() {
