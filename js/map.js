@@ -31,24 +31,68 @@ var drawGrid = function(gridSize,map) {
         };
 };
 
+function ObejctModels(map) {
+	
+	var mapWidth = map.getWidth();
+	var cellsize = mapWidth/gridsize;
+	
+	this.Monster = function() {
+		
+		var self = this;
+		self.monster = new fabric.Circle({
+           radius: cellsize/2.5, fill: 'red', left: 100, top: 100, hasControls: false
+       });
+	   	self.add = function() {
+			map.add(self.monster)
+		};
+	};
+	
+	this.Player = function() {
+		
+		var self = this;
+		self.player = new fabric.Triangle({
+           width:cellsize/1.5, height:cellsize/1.5, fill: 'green', left: 100, top: 100, hasControls: false
+       });
+       	self.add = function() {
+			map.add(self.player)
+		};
+	};
+	
+	this.PresetImages = function() {
+		
+		var self = this;
+		self.images = [
+		{img_id:'wall_img', scaleX: 2*cellsize/imgElement.width, scaleY: cellsize/imgElement.height},
+		{img_id:'barrel', scaleX: 2*cellsize/imgElement.width, scaleY: cellsize/imgElement.height}
+		];
+		
+	};
+	
+};
+
 function ObjectAdditions() {
     
     this.map = mapCanvas; 
     var mapWidth = this.map.getWidth();
     var cellsize = mapWidth/gridsize;
 
-    this.addMonster = function() {
-       var monster = new fabric.Circle({
-           radius: cellsize/2, fill: 'red', left: 100, top: 100, hasControls: false
-       });
-       this.map.add(monster)
-    }
+    //this.addMonster = function() {
+    //  var monster = new fabric.Circle({
+    //       radius: cellsize/2, fill: 'red', left: 100, top: 100, hasControls: false
+    //   });
+    //   this.map.add(monster)
+    //}
+	this.addMonster = function() {
+		var newobj = new ObejctModels(this.map);
+		var newMon = new newobj.Monster()
+		newMon.add();
+		
+	};
     
     this.addPlayer = function() {
-       var monster = new fabric.Triangle({
-           width:cellsize, height:cellsize, fill: 'green', left: 100, top: 100, hasControls: false
-       });
-       this.map.add(monster)
+		var newobj = new ObejctModels(this.map);
+		var newPlr = new newobj.Player()
+		newPlr.add();
     }
 
     this.addImage = function(img) {
@@ -72,7 +116,7 @@ function ObjectAdditions() {
 
 document.addEventListener('DOMContentLoaded', init, false);
 
-// Avtivate knockout.js
+// Activate knockout.js
 
 ko.applyBindings(new ObjectAdditions());
 
